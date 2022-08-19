@@ -33,7 +33,7 @@
         /* display: flex; */
     }
 
-     .c1 {
+    .c1 {
         width: 30%;
     }
 
@@ -68,7 +68,11 @@
     }
 
     .chat-list-wrapper {
-        height: 70%;
+        height: 74%;
+    }
+
+    .c2 .chat-list {
+        margin: 10px 0;
     }
 
     .c2 .chat-list .chat-ts {
