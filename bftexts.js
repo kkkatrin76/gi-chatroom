@@ -2,6 +2,7 @@ const version = 1.1;
 const defaultTimeoutMs = 1500;
 const defaultChoiceTimeoutMs = 2000;
 
+var chats = {};
 var chars = [];
 var char = null;
 var name = "[name]";
@@ -9,6 +10,9 @@ var chatHTML = "";
 var choiceHTML = "";
 var lastChatIndex = -1;
 var choiceSelected = "";
+
+var playChat = null;
+var playTimeout = null;
 
 function appendVersion() {
     document.getElementById('version').innerHTML = "v" + version;
@@ -28,13 +32,12 @@ function getName() {
         alertOrientation();
     }
 
-    initChars();
+    initChats();
     constructChatList();
 }
 
-function initChars() {
-
-    const chats = {
+function initChats() {
+    chats = {
         "zhongli": [{
             type: "notif",
             content: "Call lasted 2h:43m",
@@ -174,21 +177,25 @@ function initChars() {
         }]
     }
 
+    initChars();
+    getChar();
+}
+
+function initChars() {
+    // deep clone here so original chats stays intact
     chars = [{
         key: "zhongli",
-        name: "Zhongli <3",
+        name: "Zhongli 🧡",
         pfp: "pfp/zhongli.png",
         idx: 0,
-        chats: chats.zhongli
+        chats: JSON.parse(JSON.stringify(chats.zhongli))
     }, {
         key: "albedo",
-        name: "<3 Bedo <3",
+        name: "💛 Bedo 💛",
         pfp: "pfp/albedo.png",
         idx: 1,
-        chats: chats.albedo
+        chats: JSON.parse(JSON.stringify(chats.albedo))
     }];
-
-    getChar();
 }
 
 function getChar() {
@@ -222,6 +229,12 @@ function selectCharacter(charKey) {
 }
 
 function onSelectCharacter() {
+    initChars();
+
+    clearInterval(playChat);
+    clearTimeout(playTimeout);
+    // console.log({char})
+
     document.getElementById('chat-name').innerHTML = char.name;
 
     chatHTML = "";
@@ -261,13 +274,13 @@ function playChatHistory(intervalMs) {
         lastChatIndex = -1;
     }
     if (intervalMs === undefined) {
-        intervalMs = 1000;
+        intervalMs = defaultTimeoutMs;
     }
-    let playChat = setInterval(() => {
+    playChat = setInterval(() => {
         if (i < char.chats.length) {
             action = appendChatHistory(i);
             i++;
-            console.log(i, action);
+            // console.log({lastChatIndex, i, action});
             if (action.command === "stop") {
                 lastChatIndex = i;
                 clearInterval(playChat);
@@ -379,7 +392,7 @@ function appendChatHistory(index) {
 
     // hide or show chat list or choice list accordingly
     if (choiceHTML) {
-        let playTimeout = setTimeout(() => {
+        playTimeout = setTimeout(() => {
             chatListDiv.classList.add("hidden");
             choiceListDiv.classList.remove("hidden");
             clearTimeout(playTimeout);
@@ -398,13 +411,9 @@ function appendChatHistory(index) {
 
 function selectChoice(string) {
     let key = string.split("|")[0];
-    console.log({key});
     let type = string.replace(`${key}|`, "").split(":")[0];
-    console.log({type});
     let content = string.replace(`${key}|${type}:`, "").split("|")[0];
-    console.log({content});
     let timeout = parseInt(string.replace(`${key}|${type}:${content}|timeout:`, ""));
-    console.log({timeout});
     let newItem = {
         type,
         dir: "out",

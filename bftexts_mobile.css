@@ -102,21 +102,21 @@
         max-height: 95%;
         color: rgb(255 255 255 / 90%);
     }
-
+*/
     .c2 .chat-list .chat-ts {
         font-size: 0.9em;
-        margin: 15px auto;
+        margin: 10px auto;
         width: fit-content;
     }
 
     .c2 .chat-list .chat-notif {
         padding: 2px 8px;
-        margin: 15px auto;
+        margin: 10px auto;
         width: fit-content;
         background-color: rgb(102 137 82 / 80%);
         border-radius: 2px;
     }
-
+/*
     .c2 .chat-list .chat-bubble {
         display: flex;
         margin: 20px 0;
