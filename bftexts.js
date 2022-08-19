@@ -18,6 +18,19 @@ function appendVersion() {
     document.getElementById('version').innerHTML = "v" + version;
 }
 
+function getBg() {
+    let main = document.getElementById('main');
+    let hours = new Date().getHours();
+
+    if (hours >= 6 && hours <= 12) {
+        main.style.backgroundImage = "url('bg/day.jpeg')";
+    } else if (hours > 12 && hours <= 19) {
+        main.style.backgroundImage = "url('bg/evening.jpg')";
+    } else {
+        main.style.backgroundImage = "url('bg/night.jpeg')";
+    }
+}
+
 function getName() {
     name = localStorage.getItem("name");
     if (!name || name == undefined || name === "null") {
@@ -367,6 +380,10 @@ function playChatHistory(intervalMs) {
             clearInterval(playChat);
         }
     }, intervalMs);
+
+    if (i === char.chats.length) {
+        appendEnding();
+    }
 }
 
 function appendChatHistory(index) {
@@ -481,6 +498,17 @@ function appendChatHistory(index) {
     choiceListDiv.scrollTop = 0;
 
     return { command, timeoutMs };
+}
+
+function appendEnding() {
+    chatHTML += `<div class="chat-notif">- This chat has ended -</div>`;
+
+    let chatListDiv = document.getElementById('chat-list');
+    chatListDiv.innerHTML = chatHTML;
+    playTimeout = setTimeout(() => {
+        chatListDiv.scrollTop = chatListDiv.scrollHeight;
+        clearTimeout(playTimeout);
+    }, 50);
 }
 
 function selectChoice(string) {

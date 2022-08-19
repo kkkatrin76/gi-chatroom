@@ -2,35 +2,10 @@
     html {
         font-size: 0.7em;
     }
-/*
-    body {
-        margin: 0;
-        overflow: hidden;
-        transition: 0.3s;
-        font-family: gifont;
-        height: 100%;
-        position: absolute;
-        width: 100vw;
-    }
-
-    button {
-        cursor: pointer;
-        font-family: gifont;
-    }
-
-    .main {
-        display: flex;
-        width: 100%;
-        z-index: 1;
-        height: 100%;
-        background-image: url(bg/evening.jpg);
-        background-size: cover;
-    } */
 
     .content {
         background-image: linear-gradient(to right, rgba(0, 16, 62, 0.8), rgba(0, 16, 62, 0.8), rgba(0, 16, 62, 0.8), rgba(0, 16, 62, 0.8), rgba(0, 16, 62, 0.8), rgba(0, 16, 62, 0.7), rgba(0, 16, 62, 0.6), rgba(0,0,0,0));
         width: 100%;
-        /* display: flex; */
     }
 
     .c1 {
@@ -40,35 +15,22 @@
     .c1 .char-item button {
         padding: 10px 15px;
     }
-/*
-    .c1 .char-item button:hover,
-    .c1 .char-item button.selected {
-        background-color: rgb(56,64,77);
-    } */
 
     .c1 .char-item .char-pic {
-        /* border-radius: 50%; */
         width: 40px;
         height: 40px;
         min-width: 40px;
         max-height: 40px;
         min-width: 40px;
         max-height: 40px;
-        /* object-fit: contain;
-        background-color: rgb(76,82,92); */
     }
 
-    /* .c1 .char-item .char-name {
-        margin: auto 0 auto 10px;
-        text-align: left;
-    }
-*/
     .c2 {
         width: 55%;
     }
 
     .chat-list-wrapper {
-        height: 74%;
+        height: 72%;
     }
 
     .c2 .chat-list {
@@ -88,105 +50,9 @@
         background-color: rgb(102 137 82 / 80%);
         border-radius: 2px;
     }
-/*
-    .c2 .chat-list .chat-bubble {
-        display: flex;
-        margin: 20px 0;
-    }
-    .c2 .chat-list .chat-bubble.in .left,
-    .c2 .chat-list .chat-bubble.out .left {
-        margin-right: 10px;
-    }
 
-    .c2 .chat-list .chat-bubble {
-        font-size: 1.1em;
-    }
-    */
     .c2 .chat-list .chat-bubble .char-pic {
         width: 40px;
         height: 40px;
     }
-    /*
-    .c2 .chat-list .chat-bubble .char-name {
-        margin: 0 15px;
-    }
-    .c2 .chat-list .chat-bubble .message {
-        background-color: rgb(54,61,77);
-        padding: 10px 20px;
-        border-radius: 20px;
-        margin: 5px 0;
-        font-size: 1.15em;
-        width: fit-content;
-    }
-    .c2 .chat-list .chat-bubble .emote {
-        height: 100px;
-        margin-top: 10px;
-    }
-
-    .c2 .chat-list .chat-bubble.out {
-        justify-content: end;
-    }
-    .c2 .chat-list .chat-bubble.out .left {
-        text-align: end;
-    }
-    .c2 .chat-list .chat-bubble.out .message {
-        background-color: rgb(210,203,192);
-        color: rgb(54,61,77);
-        margin: 5px 0 5px auto;
-    }
-
-    .c2 .choice-list {
-        padding: 20px 30px;
-        background-color: rgba(0,0,0,0.3);
-        border-radius: 5px;
-        overflow: auto;
-        height: 95%;
-    }
-    .c2 .choice-list.row {
-
-    }
-
-    .c2 .choice-list .choice-btn {
-        width: 100%;
-        margin: 5px 0;
-        font-size: 1.2em;
-        background-color: rgb(232,225,210);
-        color: rgb(54,61,77);
-        padding: 15px 30px;
-        border: none;
-        border-radius: 20px;
-        text-align: left;
-        transition: 0.3s;
-    }
-    .c2 .choice-list.row .choice-btn {
-        width: fit-content;
-        margin-right: 10px;
-    }
-    .c2 .choice-list .choice-btn:hover {
-        background-color: rgb(210,203,192);
-    }
-    .c2 .choice-list .choice-btn.emote {
-        text-align: center;
-    }
-    .c2 .choice-list .choice-btn.emote img {
-        height: 100px;
-    }
-
-    .credits {
-        bottom: 10px;
-        right: 10px;
-        color: #fff;
-        vertical-align: bottom;
-        font-size: 0.6em;
-        text-align: end;
-        position: fixed;
-    }
-
-    #version {
-        position: fixed;
-        font-size: 0.6em;
-        left: 10px;
-        bottom: 10px;
-        color: rgb(205,178,130);
-    } */
 }
