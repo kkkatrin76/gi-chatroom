@@ -33,18 +33,10 @@
         /* display: flex; */
     }
 
-    /* .c1 {
-        width: 20%;
-        background-color: rgb(29,30,46);
-        padding: 20px 0;
-        margin-left: 40px;
-        color: #fff;
-        border: solid 3px rgb(62,62,71);
-        border-top: none;
-        border-bottom: none;
-        overflow: auto;
+     .c1 {
+        width: 30%;
     }
-*/
+
     .c1 .char-item button {
         padding: 10px 15px;
     }
@@ -72,11 +64,11 @@
     }
 */
     .c2 {
-        width: 65%;
+        width: 55%;
     }
 
     .chat-list-wrapper {
-        height: 78%;
+        height: 70%;
     }
 
     .c2 .chat-list .chat-ts {

@@ -178,7 +178,7 @@ function initChats() {
                 type: "text",
                 dir: "in",
                 showif: "z2-1",
-                content: "Wonderful."
+                content: "Wonderful. Now then."
             }, {
                 type: "text",
                 dir: "in",
