@@ -38,143 +38,158 @@ function getName() {
 
 function initChats() {
     chats = {
-        "zhongli": [{
-            type: "notif",
-            content: "Call lasted 2h:43m",
-            timeout: 0
-        }, {
-            type: "ts",
-            content: "01:32"
-        }, {
-            type: "text",
-            dir: "in",
-            content: "I hope you're feeling sleepy now, dear."
-        }, {
-            type: "emote",
-            dir: "in",
-            content: "emote/zhongli1.png"
-        }, {
-            type: "choice",
-            content: [{
-                key: "z1-1",
-                text: "I miss your voice already 💔"
+        "albedo": [
+            {
+                type: "ts",
+                content: "19:11",
+                timeout: 500
             }, {
-                key: "z1-2",
-                text: "Mhm, thank you ❤️"
-            }]
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "z1-1",
-            content: "Dearest, you will see me again tomorrow."
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "z1-1",
-            content: "But sleep is essential for one's body to function well."
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "z1-1",
-            content: "The sooner you sleep, the sooner we will reunite."
-        }, {
-            type: "choice",
-            showif: "z1-1",
-            content: [{
-                key: "z2-1",
-                text: "Okay..."
-            }]
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "z2-1",
-            content: "Wonderful."
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "z1-2",
-            content: "You are most welcome."
-        }, {
-            type: "text",
-            dir: "in",
-            content: "Rest well, my love."
-        }],
-        "albedo": [{
-            type: "ts",
-            content: "19:11",
-            timeout: 500
-        }, {
-            type: "choice",
-            content: [{
-                key: "a1-1",
-                emote: "emote/albedo1.png"
-            }],
-            timeout: 2500
-        }, {
-            type: "emote",
-            dir: "in",
-            content: `emote/albedo2.png`
-        }, {
-            type: "text",
-            dir: "in",
-            content: `What's wrong, ${name}?`
-        }, {
-            type: "choice",
-            content: [{
-                key: "a2-1",
-                text: "I need cuddles..."
+                type: "choice",
+                content: [{
+                    key: "a1-1",
+                    emote: "emote/albedo1.png"
+                }],
+                timeout: 2500
             }, {
-                key: "a2-2",
-                text: "Nothing...."
-            }],
-            timeout: 2500
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "a2-1",
-            content: `Oh, my apologies, it seems like I have been too focused on my experiments again.`,
-            timeout: 2500
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "a2-1",
-            content: `I'll come over the soonest I can.`
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "a2-2",
-            content: `Are you sure?`,
-            timeout: 3500
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "a2-2",
-            content: `Hmmm.`
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "a2-2",
-            content: `I think I know what you're thinking.`
-        }, {
-            type: "text",
-            dir: "in",
-            content: `Will you wait for me?`
-        }, {
-            type: "text",
-            dir: "in",
-            showif: "a2-2",
-            content: `I'll be there soon.`
-        }, {
-            type: "choice",
-            content: [{
-                key: "a3-1",
-                text: "❤️"
-            }]
-        }, {
-            type: "emote",
-            dir: "in",
-            content: `emote/albedo3.png`
-        }]
+                type: "emote",
+                dir: "in",
+                content: `emote/albedo2.png`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `What's wrong, ${name}?`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a2-1",
+                    text: "I need cuddles..."
+                }, {
+                    key: "a2-2",
+                    text: "Nothing...."
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "a2-1",
+                content: `Oh, my apologies, it seems like I have been too focused on my experiments again.`,
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "a2-1",
+                content: `I'll come over the soonest I can.`
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "a2-2",
+                content: `Are you sure?`,
+                timeout: 3500
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "a2-2",
+                content: `Hmmm.`
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "a2-2",
+                content: `I think I know what you're thinking.`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Will you wait for me?`
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "a2-2",
+                content: `I'll be there soon.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a3-1",
+                    text: "❤️"
+                }]
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/albedo3.png`
+            }
+        ],
+        "ayato": [],
+        "childe": [],
+        "diluc": [],
+        "gorou": [],
+        "heizou": [],
+        "itto": [],
+        "kaeya": [],
+        "kazuha": [],
+        "thoma": [],
+        "venti": [],
+        "xiao": [],
+        "zhongli": [
+            {
+                type: "notif",
+                content: "Call lasted 2h:43m",
+                timeout: 0
+            }, {
+                type: "ts",
+                content: "01:32"
+            }, {
+                type: "text",
+                dir: "in",
+                content: "I hope you're feeling sleepy now, dear."
+            }, {
+                type: "emote",
+                dir: "in",
+                content: "emote/zhongli1.png"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "z1-1",
+                    text: "I miss your voice already 💔"
+                }, {
+                    key: "z1-2",
+                    text: "Mhm, thank you ❤️"
+                }]
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "z1-1",
+                content: "Dearest, you will see me again tomorrow."
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "z1-1",
+                content: "But sleep is essential for one's body to function well."
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "z1-1",
+                content: "The sooner you sleep, the sooner we will reunite."
+            }, {
+                type: "choice",
+                showif: "z1-1",
+                content: [{
+                    key: "z2-1",
+                    text: "Okay..."
+                }]
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "z2-1",
+                content: "Wonderful."
+            }, {
+                type: "text",
+                dir: "in",
+                showif: "z1-2",
+                content: "You are most welcome."
+            }, {
+                type: "text",
+                dir: "in",
+                content: "Rest well, my love."
+            }
+        ],
     }
 
     initChars();
@@ -184,18 +199,77 @@ function initChats() {
 function initChars() {
     // deep clone here so original chats stays intact
     chars = [{
-        key: "zhongli",
-        name: "Zhongli 🧡",
-        pfp: "pfp/zhongli.png",
-        idx: 0,
-        chats: JSON.parse(JSON.stringify(chats.zhongli))
-    }, {
         key: "albedo",
         name: "💛 Bedo 💛",
         pfp: "pfp/albedo.png",
-        idx: 1,
         chats: JSON.parse(JSON.stringify(chats.albedo))
-    }];
+    }, {
+        key: "ayato",
+        name: "💙",
+        pfp: "pfp/ayato.png",
+        chats: JSON.parse(JSON.stringify(chats.ayato))
+    }, {
+        key: "kazuha",
+        name: "baby <3",
+        pfp: "pfp/kazuha.png",
+        chats: JSON.parse(JSON.stringify(chats.kazuha))
+    }, {
+        key: "heizou",
+        name: "menace 😈",
+        pfp: "pfp/heizou.png",
+        chats: JSON.parse(JSON.stringify(chats.heizou))
+    }, {
+        key: "thoma",
+        name: "future husband",
+        pfp: "pfp/thoma.png",
+        chats: JSON.parse(JSON.stringify(chats.thoma))
+    }, {
+        key: "xiao",
+        name: "precious bby",
+        pfp: "pfp/xiao.png",
+        chats: JSON.parse(JSON.stringify(chats.xiao))
+    }, {
+        key: "childe",
+        name: "❤️❤️❤️ajax❤️❤️❤️",
+        pfp: "pfp/childe.png",
+        chats: JSON.parse(JSON.stringify(chats.childe))
+    }, {
+        key: "diluc",
+        name: "firelight🔥",
+        pfp: "pfp/diluc.png",
+        chats: JSON.parse(JSON.stringify(chats.diluc))
+    }, {
+        key: "kaeya",
+        name: "kaekae",
+        pfp: "pfp/kaeya.png",
+        chats: JSON.parse(JSON.stringify(chats.kaeya))
+    }, {
+        key: "venti",
+        name: "grande upsized",
+        pfp: "pfp/venti.png",
+        chats: JSON.parse(JSON.stringify(chats.venti))
+    }, {
+        key: "itto",
+        name: "here comes trouble",
+        pfp: "pfp/itto.png",
+        chats: JSON.parse(JSON.stringify(chats.itto))
+    }, {
+        key: "gorou",
+        name: "puppy",
+        pfp: "pfp/gorou.png",
+        chats: JSON.parse(JSON.stringify(chats.gorou))
+    }, {
+        key: "zhongli",
+        name: "Archon of my 🧡",
+        pfp: "pfp/zhongli.png",
+        chats: JSON.parse(JSON.stringify(chats.zhongli))
+    }, ];
+
+    chars.sort((a, b) => {
+        if(a.key < b.key) { return -1; }
+        if(a.key > b.key) { return 1; }
+        return 0;
+    });
 }
 
 function getChar() {

@@ -49,6 +49,8 @@ button {
     border-top: none;
     border-bottom: none;
     overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .c1 .char-item button {
@@ -88,6 +90,10 @@ button {
 .c2 {
     width: 50%;
     color: #fff;
+}
+
+.chat-list-wrapper {
+    height: 84%;
 }
 
 .c2 .chat-name {
