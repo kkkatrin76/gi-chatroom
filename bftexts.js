@@ -503,12 +503,12 @@ function appendChatHistory(index) {
 function appendEnding() {
     chatHTML += `<div class="chat-notif">- This chat has ended -</div>`;
 
-    let chatListDiv = document.getElementById('chat-list');
-    chatListDiv.innerHTML = chatHTML;
     playTimeout = setTimeout(() => {
+        let chatListDiv = document.getElementById('chat-list');
+        chatListDiv.innerHTML = chatHTML;
         chatListDiv.scrollTop = chatListDiv.scrollHeight;
         clearTimeout(playTimeout);
-    }, 50);
+    }, 1000);
 }
 
 function selectChoice(string) {
