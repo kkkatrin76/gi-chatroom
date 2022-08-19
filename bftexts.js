@@ -1,10 +1,10 @@
-const version = 1.0;
+const version = 1.1;
 const defaultTimeoutMs = 1500;
 const defaultChoiceTimeoutMs = 2000;
 
 var chars = [];
 var char = null;
-var name = "${name}";
+var name = "[name]";
 var chatHTML = "";
 var choiceHTML = "";
 var lastChatIndex = -1;
@@ -17,9 +17,9 @@ function appendVersion() {
 function getName() {
     name = localStorage.getItem("name");
     if (!name || name == undefined || name === "null") {
-        name = prompt("Please enter your name", "${name}");
+        name = prompt("Please enter your name", "[name]");
         if (!name || name == undefined || name === "null") {
-            name = "${name}";
+            name = "[name]";
         }
         localStorage.setItem("name", name);
     }
