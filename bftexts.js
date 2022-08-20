@@ -9,6 +9,7 @@ var name = "[name]";
 var chatHTML = "";
 var choiceHTML = "";
 var lastChatIndex = -1;
+var choicesSelection = [];
 var choiceSelected = "";
 
 var playChat = null;
@@ -129,17 +130,160 @@ function initChats() {
                 content: `emote/albedo3.png`
             }
         ],
-        "ayato": [],
-        "childe": [],
-        "diluc": [],
-        "gorou": [],
-        "heizou": [],
-        "itto": [],
-        "kaeya": [],
-        "kazuha": [],
-        "thoma": [],
-        "venti": [],
-        "xiao": [],
+        "ayato": [
+
+        ],
+        "childe": [
+            {
+                type: "ts",
+                content: "08:01",
+                timeout: 500
+            }, {
+                type: "choice",
+                content: [{
+                    key: "c1-1",
+                    text: "Ajax?? Did you change your contact name on my phone???"
+                }]
+            }, {
+                type: "text",
+                dir: "in",
+                content: `YES`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `it was lacking the hearts!!!!!`,
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `☹️`,
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I`,
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `WAS`,
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `SO`,
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `MADGE`,
+                timeout: 1000
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/childe1.png`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "c2-1",
+                    text: "Okay... I'm sorry..."
+                }, {
+                    key: "c2-2",
+                    text: "It's just a contact name, hon...."
+                }, {
+                    key: "c2-3",
+                    text: ".... lol you're so cute 💙"
+                }],
+                timeout: 1000
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/childe2.png`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `.....`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Awh, you're so cute 💙💙💙`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I wasn't mad, babe, don't worry 💙`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Actually, I was about to get your favorite snack.... Can we meet up for lunch? 💙`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `JUST A CONTACT NAME???`,
+                showif: "c2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `BABE`,
+                showif: "c2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `IT'S THE NAME THAT SHOWS WHENEVER I CALL OR MESSAGE YOU`,
+                showif: "c2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `HOW DARE`,
+                showif: "c2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'm coming over ASAP to teach you the importance about contact names`,
+                showif: "c2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `How else can I assert dominance when you're hanging out with your friends ☹️☹️☹️`,
+                showif: "c2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `NO YOU`,
+                showif: "c2-3"
+            }
+        ],
+        "diluc": [
+
+        ],
+        "gorou": [
+
+        ],
+        "heizou": [
+
+        ],
+        "itto": [
+
+        ],
+        "kaeya": [
+
+        ],
+        "kazuha": [
+
+        ],
+        "thoma": [
+
+        ],
+        "venti": [
+
+        ],
+        "xiao": [
+
+        ],
         "zhongli": [
             {
                 type: "notif",
@@ -211,72 +355,74 @@ function initChats() {
 
 function initChars() {
     // deep clone here so original chats stays intact
-    chars = [{
-        key: "albedo",
-        name: "💛 Bedo 💛",
-        pfp: "pfp/albedo.png",
-        chats: JSON.parse(JSON.stringify(chats.albedo))
-    }, {
-        key: "ayato",
-        name: "💙",
-        pfp: "pfp/ayato.png",
-        chats: JSON.parse(JSON.stringify(chats.ayato))
-    }, {
-        key: "kazuha",
-        name: "baby <3",
-        pfp: "pfp/kazuha.png",
-        chats: JSON.parse(JSON.stringify(chats.kazuha))
-    }, {
-        key: "heizou",
-        name: "menace 😈",
-        pfp: "pfp/heizou.png",
-        chats: JSON.parse(JSON.stringify(chats.heizou))
-    }, {
-        key: "thoma",
-        name: "future husband",
-        pfp: "pfp/thoma.png",
-        chats: JSON.parse(JSON.stringify(chats.thoma))
-    }, {
-        key: "xiao",
-        name: "precious bby",
-        pfp: "pfp/xiao.png",
-        chats: JSON.parse(JSON.stringify(chats.xiao))
-    }, {
-        key: "childe",
-        name: "❤️❤️❤️ajax❤️❤️❤️",
-        pfp: "pfp/childe.png",
-        chats: JSON.parse(JSON.stringify(chats.childe))
-    }, {
-        key: "diluc",
-        name: "firelight🔥",
-        pfp: "pfp/diluc.png",
-        chats: JSON.parse(JSON.stringify(chats.diluc))
-    }, {
-        key: "kaeya",
-        name: "kaekae",
-        pfp: "pfp/kaeya.png",
-        chats: JSON.parse(JSON.stringify(chats.kaeya))
-    }, {
-        key: "venti",
-        name: "grande upsized",
-        pfp: "pfp/venti.png",
-        chats: JSON.parse(JSON.stringify(chats.venti))
-    }, {
-        key: "itto",
-        name: "here comes trouble",
-        pfp: "pfp/itto.png",
-        chats: JSON.parse(JSON.stringify(chats.itto))
-    }, {
-        key: "gorou",
-        name: "puppy",
-        pfp: "pfp/gorou.png",
-        chats: JSON.parse(JSON.stringify(chats.gorou))
-    }, {
-        key: "zhongli",
-        name: "Archon of my 🧡",
-        pfp: "pfp/zhongli.png",
-        chats: JSON.parse(JSON.stringify(chats.zhongli))
-    }, ];
+    chars = [
+        {
+            key: "albedo",
+            name: "💛 Bedo 💛",
+            pfp: "pfp/albedo.png",
+            chats: JSON.parse(JSON.stringify(chats.albedo))
+        }, {
+            key: "ayato",
+            name: "💙",
+            pfp: "pfp/ayato.png",
+            chats: JSON.parse(JSON.stringify(chats.ayato))
+        }, {
+            key: "kazuha",
+            name: "baby <3",
+            pfp: "pfp/kazuha.png",
+            chats: JSON.parse(JSON.stringify(chats.kazuha))
+        }, {
+            key: "heizou",
+            name: "menace 😈",
+            pfp: "pfp/heizou.png",
+            chats: JSON.parse(JSON.stringify(chats.heizou))
+        }, {
+            key: "thoma",
+            name: "future husband",
+            pfp: "pfp/thoma.png",
+            chats: JSON.parse(JSON.stringify(chats.thoma))
+        }, {
+            key: "xiao",
+            name: "precious bby",
+            pfp: "pfp/xiao.png",
+            chats: JSON.parse(JSON.stringify(chats.xiao))
+        }, {
+            key: "childe",
+            name: "❤️❤️❤️love of my life❤️❤️❤️",
+            pfp: "pfp/childe.png",
+            chats: JSON.parse(JSON.stringify(chats.childe))
+        }, {
+            key: "diluc",
+            name: "firelight🔥",
+            pfp: "pfp/diluc.png",
+            chats: JSON.parse(JSON.stringify(chats.diluc))
+        }, {
+            key: "kaeya",
+            name: "kaekae",
+            pfp: "pfp/kaeya.png",
+            chats: JSON.parse(JSON.stringify(chats.kaeya))
+        }, {
+            key: "venti",
+            name: "grande upsized",
+            pfp: "pfp/venti.png",
+            chats: JSON.parse(JSON.stringify(chats.venti))
+        }, {
+            key: "itto",
+            name: "here comes trouble",
+            pfp: "pfp/itto.png",
+            chats: JSON.parse(JSON.stringify(chats.itto))
+        }, {
+            key: "gorou",
+            name: "puppy",
+            pfp: "pfp/gorou.png",
+            chats: JSON.parse(JSON.stringify(chats.gorou))
+        }, {
+            key: "zhongli",
+            name: "Archon of my 🧡",
+            pfp: "pfp/zhongli.png",
+            chats: JSON.parse(JSON.stringify(chats.zhongli))
+        }
+    ];
 
     chars.sort((a, b) => {
         if(a.key < b.key) { return -1; }
@@ -328,6 +474,7 @@ function onSelectCharacter() {
     choiceHTML = "";
     lastChatIndex = -1;
     choiceSelected = "";
+    choicesSelection = [];
 
     let chatListDiv = document.getElementById('chat-list');
     let choiceListDiv = document.getElementById('choice-list');
@@ -464,13 +611,17 @@ function appendChatHistory(index) {
             command = "stop";
             timeoutMs = chat.timeout !== undefined ? chat.timeout : defaultChoiceTimeoutMs;
 
+            choicesSelection = chat.content;
+            // console.log({choicesSelection});
+
             chat.content.forEach((c) => {
                 if (c.text) {
-                    choiceHTML += `<button class="choice-btn" onclick="selectChoice('${c.key}|text:${c.text}|timeout:${timeoutMs}')">${c.text}</button>`;
+                    choiceHTML += `<button class="choice-btn" onclick="selectChoice('${c.key}')">${c.text}</button>`;
                 } else if (c.emote) {
-                    choiceHTML += `<button class="choice-btn emote" onclick="selectChoice('${c.key}|emote:${c.emote}|timeout:${timeoutMs}')"><img src="${c.emote}"></img></button>`;
+                    choiceHTML += `<button class="choice-btn emote" onclick="selectChoice('${c.key}')"><img src="${c.emote}"></img></button>`;
                 }
             });
+            // console.log(choiceHTML);
             break;
     }
 
@@ -511,18 +662,21 @@ function appendEnding() {
     }, 1000);
 }
 
-function selectChoice(string) {
-    let key = string.split("|")[0];
-    let type = string.replace(`${key}|`, "").split(":")[0];
-    let content = string.replace(`${key}|${type}:`, "").split("|")[0];
-    let timeout = parseInt(string.replace(`${key}|${type}:${content}|timeout:`, ""));
-    let newItem = {
-        type,
-        dir: "out",
-        content,
-        showif: key,
-        timeout
-    };
+function selectChoice(key) {
+    let newItem = null;
+    choicesSelection.forEach((item, i) => {
+        if (item.key === key) {
+            newItem = {
+                type: item.text ? "text" : "emote",
+                dir: "out",
+                content: item.text ? item.text : item.emote,
+                showif: key,
+                timeout: item.timeout === undefined ? defaultTimeoutMs : item.timeout
+            };
+        }
+    });
+
+    // console.log({newItem});
 
     choiceSelected = key;
     choiceHTML = "";
