@@ -9,7 +9,7 @@
     }
 
     .c1 {
-        width: 30%;
+        width: 26%;
     }
 
     .c1 .char-item button {
@@ -26,7 +26,7 @@
     }
 
     .c2 {
-        width: 55%;
+        width: 58%;
     }
 
     .chat-list-wrapper {
@@ -54,5 +54,13 @@
     .c2 .chat-list .chat-bubble .char-pic {
         width: 40px;
         height: 40px;
+    }
+
+    .c2 .chat-list .chat-bubble .message {
+        padding: 8px 10px;
+    }
+
+    .c2 .choice-list .choice-btn {
+        padding: 10px 20px;
     }
 }
