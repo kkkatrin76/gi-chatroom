@@ -1,4 +1,4 @@
-const version = 1.1;
+const version = 1.0;
 const defaultTimeoutMs = 1500;
 const defaultChoiceTimeoutMs = 2000;
 
@@ -131,7 +131,274 @@ function initChats() {
             }
         ],
         "ayato": [
-
+            {
+                type: "ts",
+                content: "12:46",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `${name}, dear, where are you?`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a1-1",
+                    text: "Lunch!"
+                }, {
+                    key: "a1-2",
+                    text: "Outside!"
+                }],
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/ayato3.png`,
+                showif: "a1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `But you're not in the dining room?`,
+                showif: "a1-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a1-1",
+                    text: "I'm at Kiminami Restaurant!"
+                }],
+                showif: "a1-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `As in the garden?`,
+                showif: "a1-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a1-2",
+                    text: "As in the city. Kiminami Restaurant!"
+                }],
+                showif: "a1-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Ah...`,
+                showif: "a1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You went out and never asked me to come along?`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I must admit, I'm a little hurt.`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Let me rephrase that. I am very hurt....`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a2-1",
+                    text: "Oh, I'm so sorry darling ;(( I thought you were busy!!"
+                }, {
+                    key: "a2-2",
+                    text: "Mhm... And when was the last time you willingly asked me out for lunch together, again?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I was, but I'm free now.`,
+                showif: "a2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `And I wanted to spend some time with you...`,
+                showif: "a2-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a3-1",
+                    text: "Do you want to join us?"
+                }, {
+                    key: "a3-2",
+                    text: "We can have dinner together later!"
+                }],
+                showif: "a2-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Hm?`,
+                showif: "a3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `'Us'?`,
+                showif: "a3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Dear... Who are you gracing with your presence right now? :)`,
+                showif: "a3-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a4-1",
+                    text: "I'll talk to you later darling the food is here!!!"
+                }, {
+                    key: "a4-2",
+                    text: "Oh, Aether stopped by so I figured I'd take him out for lunch!"
+                }],
+                showif: "a3-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `${name}...`,
+                showif: "a4-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Would you be a darling and order my usual menu, please? I'll be there in ten ^^`,
+                showif: "a4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `See you soon, darling 💙`,
+                showif: "a4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I see.`,
+                showif: "a4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Kiminami Restaurant, yes?`,
+                showif: "a4-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Could you order my usual menu, I'll be there in ten ^^`,
+                showif: "a4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll see you soon, darling 💙`,
+                showif: "a4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Hmm.`,
+                showif: "a3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I suppose that works.`,
+                showif: "a3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Then, please block your schedule. Meet me at six in my office? Let me take you out on a dinner date.`,
+                showif: "a3-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a3-2",
+                    text: "Okay! See you later ♥️"
+                }],
+                showif: "a3-2",
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/ayato1.png`,
+                showif: "a3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `....`,
+                showif: "a2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'm sorry, darling.`,
+                showif: "a2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I have been neglecting you, haven't I?`,
+                showif: "a2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Please let me make it up to you. Dinner date tonight? Just us two?`,
+                showif: "a2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll get someone to buy your your favorite dessert.`,
+                showif: "a2-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a5-1",
+                    text: "Fine."
+                }, {
+                    key: "a5-2",
+                    text: "Dessert? :|"
+                }],
+                showif: "a2-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Thank you, love.`,
+                showif: "a5-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll see you tonight 💙 Have a lovely lunch.`,
+                showif: "a5-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Apologies.`,
+                showif: "a5-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `DessertS.`,
+                showif: "a5-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a5-2",
+                    emote: "emote/ayato4.png"
+                }],
+                showif: "a5-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You have me wrapped within your beautiful fingers, love.`,
+                showif: "a5-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Then, I'll return back to work for now and await for our date.`,
+                showif: "a5-2"
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/ayato2.png`,
+                showif: "a5-2"
+            }
         ],
         "childe": [
             {
@@ -156,7 +423,7 @@ function initChats() {
             }, {
                 type: "text",
                 dir: "in",
-                content: `☹️`,
+                content: `:(`,
                 timeout: 1000
             }, {
                 type: "text",
@@ -206,19 +473,57 @@ function initChats() {
                 content: `.....`,
                 showif: "c2-1"
             }, {
+                type: "choice",
+                content: [{
+                    key: "c2-1",
+                    text: "Please don't be mad..."
+                }],
+                showif: "c2-1",
+                timeout: 1000
+            }, {
                 type: "text",
                 dir: "in",
-                content: `Awh, you're so cute 💙💙💙`,
+                content: `...........`,
                 showif: "c2-1"
             }, {
                 type: "text",
                 dir: "in",
-                content: `I wasn't mad, babe, don't worry 💙`,
+                content: `awh you're so cute 💙💙💙`,
                 showif: "c2-1"
             }, {
                 type: "text",
                 dir: "in",
-                content: `Actually, I was about to get your favorite snack.... Can we meet up for lunch? 💙`,
+                content: `i wasn't mad babe don't worry 💙`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `well maybe`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `just a little bit`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `a teeny tiny bit`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `BUT`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `actually, i was about to get your favorite snack....`,
+                showif: "c2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `can we meet up for lunch? you can make it up to me then 💙`,
                 showif: "c2-1"
             }, {
                 type: "text",
@@ -233,118 +538,2129 @@ function initChats() {
             }, {
                 type: "text",
                 dir: "in",
-                content: `IT'S THE NAME THAT SHOWS WHENEVER I CALL OR MESSAGE YOU`,
+                content: `IT'S THE NAME THAT SHOWS ON UR SCREEN WHENEVER I CALL OR MESSAGE YOU`,
                 showif: "c2-2"
             }, {
                 type: "text",
                 dir: "in",
-                content: `HOW DARE`,
+                content: `OK THAT'S IT`,
                 showif: "c2-2"
             }, {
                 type: "text",
                 dir: "in",
-                content: `I'm coming over ASAP to teach you the importance about contact names`,
+                content: `im cming over ASAP to teach you hte importance about contact names`,
+                showif: "c2-2",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `how else can i assert dominance when you're hanging out with ur friends :((((`,
+                showif: "c2-2",
+                timeout: 3000
+            }, {
+                type: "choice",
+                content: [{
+                    key: "c2-2",
+                    text: "you??? don't need to????"
+                }],
+                showif: "c2-2",
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I HAVE TO`,
                 showif: "c2-2"
             }, {
                 type: "text",
                 dir: "in",
-                content: `How else can I assert dominance when you're hanging out with your friends ☹️☹️☹️`,
+                content: `wanna make you proud`,
+                showif: "c2-2",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `do you know how happy it makes me whenever i hang out with the boys and '❤️💙♥️💗mine❤️💙♥️💗' comes up on my screen and taylor swift starts singing the song from my phone speaker?????`,
+                showif: "c2-2",
+                timeout: 4000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `the ENVIOUS looks on their faces are hilarious`,
                 showif: "c2-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "c3-1",
+                    text: "i'm.... pretty sure they're not 'envious'..."
+                }, {
+                    key: "c3-2",
+                    text: "yeah uh i think that's called secondhand embarrassment, which i am going through right now..."
+                }],
+                showif: "c2-2",
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `nah i'm pretty sure they are`,
+                showif: "c3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `try calling my phone the next time when we're all hanging out together`,
+                showif: "c3-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "c3-1",
+                    text: "why would I call YOU if WE were hanging out???"
+                }],
+                showif: "c3-1",
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `NO TRUST ME`,
+                showif: "c3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `look at 'mouchie's face`,
+                showif: "c3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `you'll thank me later`,
+                showif: "c3-1",
+                timeout: 5000
+            }, {
+                type: "ts",
+                content: "20:48",
+                showif: "c3-1",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `DID YOU SEE HOW HE LOOKS LIKE A CONSTIPATED FROG HAHAHAHAHHAHH IM DYING`,
+                showif: "c3-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "c3-1",
+                    text: "you know what for this once, you are right"
+                }],
+                showif: "c3-1",
+                timeout: 1000
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/childe4.png`,
+                showif: "c3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `pfffff whattttt`,
+                showif: "c3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `they're just ✨jealous✨ they don't get to be as lovey-dovey as we are!!`,
+                showif: "c3-2"
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/childe5.png`,
+                showif: "c3-2"
             }, {
                 type: "text",
                 dir: "in",
                 content: `NO YOU`,
                 showif: "c2-3"
-            }
-        ],
-        "diluc": [
-
-        ],
-        "gorou": [
-
-        ],
-        "heizou": [
-
-        ],
-        "itto": [
-
-        ],
-        "kaeya": [
-
-        ],
-        "kazuha": [
-
-        ],
-        "thoma": [
-
-        ],
-        "venti": [
-
-        ],
-        "xiao": [
-
-        ],
-        "zhongli": [
-            {
-                type: "notif",
-                content: "Call lasted 2h:43m",
-                timeout: 0
             }, {
-                type: "ts",
-                content: "01:32"
+                type: "choice",
+                content: [{
+                    key: "c2-3",
+                    text: "NO YOU"
+                }],
+                showif: "c2-3",
+                timeout: 1000
             }, {
                 type: "text",
                 dir: "in",
-                content: "I hope you're feeling sleepy now, dear."
+                content: `NO NO NO YOU`,
+                showif: "c2-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `don't make me send you your selfies✨`,
+                showif: "c2-3"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "c2-3",
+                    text: "you save my selfies????"
+                }],
+                showif: "c2-3",
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `UMM YES???`,
+                showif: "c2-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `WAIT`,
+                showif: "c2-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `no... don't tell me...`,
+                showif: "c2-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `do you not save my selfies?`,
+                showif: "c2-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `you don't have special album for my selfies??`,
+                showif: "c2-3",
+                timeout: 3000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `what next babe are you gonna tell me you don't make song playlists about me????`,
+                showif: "c2-3",
+                timeout: 3000
+            }, {
+                type: "choice",
+                content: [{
+                    key: "c4-1",
+                    text: "............ no?"
+                }, {
+                    key: "c4-2",
+                    text: "wait no i do i was just shocked"
+                }],
+                showif: "c2-3",
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `i-`,
+                showif: "c4-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `did you hear that? that's the sound of my heart breaking`,
+                showif: "c4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `;(`,
+                showif: "c4-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `i'm gonna need like a thousand kisses for this ;((((`,
+                showif: "c4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `!!!`,
+                showif: "c4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `wait this is the first time i've heard of this`,
+                showif: "c4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I WANNA SEE THEM ALL`,
+                showif: "c4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `ZOOMING TO YOUR SIDE`,
+                showif: "c4-2"
+            }
+        ],
+        "diluc": [
+            {
+                type: "ts",
+                content: "12:51",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `What's this I heard about you skipping your meals?`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `${name}, what's wrong?`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Are you feeling unwell?`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Shall we go to the hospital?`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "d1-1",
+                    text: "Luc, I'm fine."
+                }, {
+                    key: "d1-2",
+                    text: "I was just busy, no worries!"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `No.`,
+                showif: "d1-1",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Take today off, we're going to the hospital.`,
+                showif: "d1-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "d2-1",
+                    text: "Sweetheart, you're overreacting."
+                }, {
+                    key: "d2-2",
+                    text: "Says the one who skips his meals regularly :/"
+                }],
+                showif: "d1-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `When you've been skipping lunch for a whole week?`,
+                showif: "d2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'm not overreacting, I'm worried.`,
+                showif: "d2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Not for a whole week.`,
+                showif: "d2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `For a whole week?`,
+                showif: "d1-2",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Are we lacking staff? Should I hire more people?`,
+                showif: "d1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `${name}, I am worried about you.`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Please talk to me honestly.`,
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `As your boyfriend, it's my duty and wish to make sure you're well-cared for.`,
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `We promised to be completely open to each other and to rely on each other, didn't we?`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `So, rely on me.`,
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'm just outside your office. May I come in?`
+            }
+        ],
+        "heizou": [
+            {
+                type: "ts",
+                content: "07:35",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `--. --- --- -.. / -- --- .-. -. .. -. --. / # ...--`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h1-1",
+                    text: "-- --- .-. -. .. -. --. / -... .. - -.-. ...."
+                }, {
+                    key: "h1-2",
+                    text: "morning, sherlock"
+                }, {
+                    key: "h1-3",
+                    text: "my brain isn't awake enough for this...."
+                }],
+                timeout: 2500
             }, {
                 type: "emote",
                 dir: "in",
-                content: "emote/zhongli1.png"
+                content: `emote/heizou4.png`,
+                showif: "h1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `this amount of ✨sass✨ right in the morning?`,
+                showif: "h1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `you spoil me darling ❤️`,
+                showif: "h1-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h1-1",
+                    text: "wow masochist much"
+                }],
+                showif: "h1-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `only when it comes to you~`,
+                showif: "h1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `hello my dear watson ❤️`,
+                showif: "h1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `how are you this fine morning?`,
+                showif: "h1-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h1-2",
+                    text: "i'm fine thank you, and you?"
+                }],
+                showif: "h1-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `lovely`,
+                showif: "h1-2"
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/heizou2.png`,
+                showif: "h1-2",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `to my utmost regret i am in fact not fine this morning`,
+                showif: "h1-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `seeing as i have yet to receive my morning kisses from my beloved assistant`,
+                showif: "h1-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h2-1",
+                    text: "how unfortunate, guess your whole day's gonna suck today."
+                }, {
+                    key: "h2-2",
+                    text: "how are you so cute shhdhshshs"
+                }],
+                showif: "h1-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `meanie ;((`,
+                showif: "h2-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `may i bribe you with your favorite snack and beverage at least?`,
+                showif: "h2-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h3-1",
+                    text: "hmmm.... perhaps..."
+                }, {
+                    key: "h3-2",
+                    text: "i'm not falling for that trap again..."
+                }],
+                showif: "h2-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `oh? you little criminal~`,
+                showif: "h3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `i'm coming over to arrest you <3`,
+                showif: "h3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `aweeeee`,
+                showif: "h3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `what a shame`,
+                showif: "h3-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `but if i just so happen to turn up by your doorstep with said items on hand, you wouldn't turn me away, right?`,
+                showif: "h3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `cute? mmhm go on~`,
+                showif: "h2-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h2-2",
+                    text: "handsome witty annoying gremlin"
+                }],
+                showif: "h2-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `gasp! annoying??? how could you hurt me like this...`,
+                showif: "h2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `i demand kisses for apology!`,
+                showif: "h2-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h2-2",
+                    text: "okay, okay, cutie"
+                }],
+                showif: "h2-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `❤️`,
+                showif: "h2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `oh come on now, entertain me~`,
+                showif: "h1-3"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h2-3",
+                    text: "n o"
+                }],
+                showif: "h2-3",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `;((`,
+                showif: "h1-3",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `alright alright, i'll get you your favorite breakfast, how about that?`,
+                showif: "h1-3"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h1-3",
+                    text: "good morning to the handsomest detective in inazuma ❤️"
+                }],
+                showif: "h1-3",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `there's my lovely assistant 😘`,
+                showif: "h1-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `i'll see you soon, okay?`,
+                showif: "h1-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `also`,
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `69 20 6c 6f 76 65 20 79 6f 75 20 3c 33`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "h3-1",
+                    text: "💗😘"
+                }, {
+                    key: "h3-2",
+                    text: "yeah i'm definitely not awake enough for this"
+                }, {
+                    key: "h3-3",
+                    text: "69 20 6b 6e 6f 77 2c 20 69 20 6c 6f 76 65 20 6d 65 20 74 6f 6f 20 3c 33"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `lol`,
+                showif: "h3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `lmao`,
+                showif: "h3-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `this is why i can never get enough of you ❤️`,
+                showif: "h3-3"
+            }
+        ],
+        "itto": [
+            {
+                type: "ts",
+                content: "15:22",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `BABE`,
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `BABE`,
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `BABB`,
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `BBBE`,
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `HEL`,
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `HELP`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "i1-1",
+                    text: "WHAT NOW"
+                }, {
+                    key: "i1-2",
+                    text: "itto calm down are you okay????"
+                }, {
+                    key: "i1-3",
+                    emote: "emote/itto1.png"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `DONT HATE ME PLEAS`,
+                showif: "i1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I UH`,
+                showif: "i1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `IM OOK`,
+                showif: "i1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I THINK`,
+                showif: "i1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `UHHH`,
+                showif: "i1-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I THINKN THE POLICE ALRRE AFTERL ME`,
+                showif: ""
+            }, {
+                type: "choice",
+                content: [{
+                    key: "i2-1",
+                    text: "FOR FUCKS SAKE"
+                }, {
+                    key: "i2-2",
+                    text: "I LEAVE YOU FOR FIVE MINUTES"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `BUTBABW`,
+                showif: "i2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `SNOT MY FAULT`,
+                showif: "i2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `NO LISTEN`,
+                showif: "i2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `GENUINIELY I WASJSUT TRYINA HELP THE GUY`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "i3-1",
+                    text: "where are you i'll come get you"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `PLEASE D O`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `THANKS BABE ILY`
+            }
+        ],
+        "kaeya": [
+            {
+                type: "ts",
+                content: "23:49",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Snowflek`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Wyd`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Wanna`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `xomm over?`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `;))_)`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k1-1",
+                    text: "..... Kaeya, we live under the same roof???"
+                }, {
+                    key: "k1-2",
+                    text: "Baby, are you drunk?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `We r ?`,
+                showif: "k1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `O`,
+                showif: "k1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Wow`,
+                showif: "k1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Meat`,
+                showif: "k1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Neet`,
+                showif: "k1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Ne ta`,
+                showif: "k1-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k1-1",
+                    text: "..."
+                }],
+                showif: "k1-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I thgik Im`,
+                showif: "k1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Drrnk`,
+                showif: "k1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Ye`,
+                showif: "k1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `No`,
+                showif: "k1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Non`,
+                showif: "k1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Maybb`,
+                showif: "k1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Dill made mee a`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Dwirk`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Drirnk`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Tast e gud`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k1-1",
+                    text: "Stay where you are. Is Diluc with you?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Iono`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Ther s a gorl who`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Looks liek hi m`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Dilljux`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k1-1",
+                    text: "There's a girl who looks like Diluc??? Holy shit what??"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Uhhhu h`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Samme reedh air`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Bwut long`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k1-1",
+                    text: "Love... Your brother has long red hair. You sure that 'girl' isn't him?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Whio dilook?`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Lol`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `No beb my big bbrotherds haor is sh orgt`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `N hes nott this grummy`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Frunp Y`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Grumpjy`,
+                timeout: 5000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `This is Diluc.`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Could you please pick him up.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k1-1",
+                    text: "I'm on it. Sorry, Diluc. Uh, just one question."
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `We're at my pub. The one downtown, near your place.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k1-1",
+                    text: "Not that. Did you use to have short hair when you were young?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Yes?`,
+                timeout: 4000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Oh.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k1-1",
+                    text: "Yeah... I'll be there soon. Just... keep him safe for us, okay?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I will.`
+            }
+        ],
+        "kazuha": [
+            {
+                type: "ts",
+                content: "14:55",
+                timeout: 500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/kazuha4.png`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Dove, are you in the library?`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k1-1",
+                    text: "Yes!"
+                }, {
+                    key: "k1-2",
+                    text: "No, but I could stop by. Why?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Perfect.`,
+                showif: "k1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'm sorry to trouble you...`,
+                showif: "k1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Could you help me borrow a few books? I need a few references.`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll send you the complete list in ten minutes.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k2-1",
+                    text: "What's in it for me?"
+                }, {
+                    key: "k2-2",
+                    text: "Hmmm... No."
+                }, {
+                    key: "k2-3",
+                    text: "Okay!!"
+                }],
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/kazuha1.png`,
+                showif: "k2-1",
+                timeout: 1500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Of course, I had a few suitable rewards in mind.`,
+                showif: "k2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Does one kiss per book sound fair to you?`,
+                showif: "k2-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k3-1",
+                    text: "Make it five per book!"
+                }, {
+                    key: "k3-2",
+                    text: "Just a kiss?"
+                }],
+                showif: "k2-1",
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/kazuha2.png`,
+                showif: "k3-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `This is what Venti would call “blatant daylight robbery”, I see...`,
+                showif: "k3-1",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Alas, for the sake of literature, I must persevere. You have a deal ^^`,
+                showif: "k3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I can throw in a massage too, if you'd like.`,
+                showif: "k3-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k3-2",
+                    text: "❤️"
+                }],
+                showif: "k3-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `❤️`,
+                showif: "k3-2"
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/kazuha3.png`,
+                showif: "k2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Please, love?`,
+                showif: "k2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `For me?`,
+                showif: "k2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I've been a good boy, haven't I? :(`,
+                showif: "k2-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k4-1",
+                    text: "lol okay okay"
+                }, {
+                    key: "k4-2",
+                    text: "Everything comes with a price, pretty boy ^^"
+                }],
+                showif: "k2-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `☺️`,
+                showif: "k4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Alright, alright...`,
+                showif: "k4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll be the little spoon tonight...`,
+                showif: "k4-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "k4-2",
+                    text: "😘  ok, consider it done!"
+                }],
+                showif: "k4-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Thank you, love...`,
+                showif: "k4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I can't wait to be in your arms 😌`,
+                showif: "k4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Thank you, maple 🍁`,
+                showif: "k2-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You're so good to me...`,
+                showif: "k2-3",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I must have helped save a nation on my past life, to be able to have such a wonderful and loving partner ^^`,
+                showif: "k2-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll send you the list soon.`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Have a good rest of the day, okay?`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I love you ❤️`
+            }
+        ],
+        "thoma": [
+            {
+                type: "ts",
+                content: "16:28",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `What do you want for dinner?`,
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'm grocery shopping for the Kamisato siblings right now, thought I'd buy a few things for us too.`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Do you want your usual snacks? :)`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t1-1",
+                    text: "oh i'm good"
+                }, {
+                    key: "t1-2",
+                    text: "yes!!!!"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You sure? Okay!`,
+                showif: "t1-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t1-2",
+                    text: "ice cream..."
+                }, {
+                    key: "t1-2",
+                    text: "chips..."
+                }, {
+                    key: "t1-2",
+                    text: "chocolates..."
+                }],
+                showif: "t1-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I gotchu baby <3`,
+                showif: "t1-2"
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/thoma2.png`,
+                showif: "t1-2",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Oh, can you check the pantry if you're home? Are we out of soy sauce?`
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/thoma5.png`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t2-1",
+                    text: "light soy sauce's out"
+                }, {
+                    key: "t2-2",
+                    text: "which one is the soy sauce again...."
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Ah, as I expected. Thanks for checking!`,
+                showif: "t2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `The one with red label, darling!`,
+                showif: "t2-2",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `We have three types, but I'm pretty sure the other two are still half full.`,
+                showif: "t2-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t2-2",
+                    text: "i saw it. it looks almost done"
+                }],
+                showif: "t2-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Got it!`,
+                showif: "t2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `How about the toilet papers?`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t3-1",
+                    text: "you bought like. half a dozen last time, remember? 🙄"
+                }, {
+                    key: "t3-2",
+                    text: "we still have lots of those!"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Oh! Right!!`,
+                showif: "t3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Also, hush, it was on discount, so it was a very good deal!!`,
+                showif: "t3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Alright!`,
+                showif: "t3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I think that's all...`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Oh wait, you haven't answered what you wanted for dinner!!`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t4-1",
+                    text: "anything's fine as long as you're the one who's cooking it <3"
+                }, {
+                    key: "t4-2",
+                    text: "i've been craving this one specific spice..."
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `////////`,
+                showif: "t4-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Stoppp you're making me blush like a fool in the middle of a supermarket`,
+                showif: "t4-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t4-1",
+                    emote: "emote/thoma1.png"
+                }],
+                showif: "t4-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Hmmmph`,
+                showif: "t4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Wait until I get back home <3`,
+                showif: "t4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Spice??`,
+                showif: "t4-2",
+                timeout: 3000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Ummm okay, what is it? I can always try and make something that will highlight the taste of this spice!!`,
+                showif: "t4-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t4-2",
+                    text: "you know what they say"
+                }],
+                showif: "t4-2",
+                timeout: 2500
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t4-2",
+                    text: "the best ingredients of all food"
+                }],
+                showif: "t4-2",
+                timeout: 2500
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t4-2",
+                    text: "L-O-V-E ❤️"
+                }],
+                showif: "t4-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `..........`,
+                showif: "t4-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `${name}....`,
+                showif: "t4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Love....`,
+                showif: "t4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Baby........`,
+                showif: "t4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Why are you so cute //////`,
+                showif: "t4-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "t4-2",
+                    text: "gotta keep my future husband on the hook so i won't lose him~"
+                }],
+                showif: "t4-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `${name}`,
+                showif: "t4-2",
+                timeout: 2500
+            }, , {
+                type: "text",
+                dir: "in",
+                content: `You already have me hooked since the start of our relationship <3`,
+                showif: "t4-2"
+            }, , {
+                type: "emote",
+                dir: "in",
+                content: `emote/thoma1.png`,
+                showif: "t4-2"
+            },
+        ],
+        "venti": [
+            {
+                type: "ts",
+                content: "15:14",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Did you know`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `That a popular coffee chain in our city`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Is apparently doing human cloning and human trafficking`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "v1-1",
+                    text: "What kind of dark web did you accidentally stumble in now"
+                }, {
+                    key: "v1-2",
+                    text: "EXCUSE ME WHAT"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `No no n o`,
+                showif: "v1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I saw the signs with my own eyes!!!!`,
+                showif: "v1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Yeah!!!! Crazy right`,
+                showif: "v1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You know what's crazier`,
+                showif: "v1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `They're`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Cloning`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `And trafficking`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `ME`
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/venti9.png`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "v2-1",
+                    text: "...... Why do I even bother entertaining you....."
+                }, {
+                    key: "v2-2",
+                    text: "I'm marching to the nearest ⭐️bucks to get a new Venti hopefully this one behaves"
+                }],
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/venti3.png`,
+                showif: "v2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Ehe`,
+                showif: "v2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Because obviously you loooooove me!`,
+                showif: "v2-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "v3-1",
+                    text: "Keep this up and I won't be"
+                }],
+                showif: "v2-1",
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/venti4.png`,
+                showif: "v3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You say that~`,
+                showif: "v3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `But with every kiss I give you, you fall in love with me even more~`,
+                showif: "v3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Oh. That kinda sounds nice-`,
+                showif: "v3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `WRITE THAT DOWN WRITE THAT DOWN`,
+                showif: "v3-1"
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/venti9.png`,
+                showif: "v2-2",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `WH`,
+                showif: "v2-2",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `NOOO`,
+                showif: "v2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `THERE CAN BE ONLY ONE VENTI IN YOUR LIFE AND THAT'S ME ;(((`,
+                showif: "v2-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'LL BUY YOU AS MANY COFFEE AS YOU WANT <3 <3`,
+                showif: "v2-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "v4-1",
+                    text: "I sure can go for a cup right now..."
+                }, {
+                    key: "v4-2",
+                    text: "lol ok ok, you're the only Venti in my life. Happy?"
+                }],
+                showif: "v2-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'M RUNNING`,
+                showif: "v4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `DO YOU WANT SOME MUFFINS WITH THAT`,
+                showif: "v4-1",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Sorry stupid question, of course you want muffins <3`,
+                showif: "v4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll be there in fifteen minutes tops!!! 😘😘😘😘`,
+                showif: "v4-1"
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/venti3.png`,
+                showif: "v4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I love love love looooove you`,
+                showif: "v4-2"
+            }
+        ],
+        "xiao": [
+            {
+                type: "ts",
+                content: "20:41",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `${name}`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "x1-1",
+                    text: "Yes, love? Are you okay? Do you need me to pick you up?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I love you.`
+            }, , {
+                type: "choice",
+                content: [{
+                    key: "x1-1",
+                    text: "Venti, please return my boyfriend's phone."
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `It's not Venti, it's me.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "x1-1",
+                    text: "Yeah and I'm the devil Barbatos 🙄"
+                }],
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/venti4.png`,
+                timeout: 5000
+            }, {
+                type: "ts",
+                content: "21:10",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Sorry.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "x2-1",
+                    text: "Xiao?"
+                }, {
+                    key: "x2-2",
+                    text: "Xiao!!! Are you ok?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Yes, it's me.`,
+                showif: "x2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Aside from developing a migraine from all this loud music, I am fine.`,
+                showif: "x2-2"
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/xiao10.png`
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I shouldn't have came to this stupid thing.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "x3-1",
+                    text: "Should I pick you up?"
+                }, {
+                    key: "x3-2",
+                    text: "Should I call you and pretend there's an emergency so you can go?"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I wish I could say yes...`,
+                showif: "x3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `But it's fine. I'll stay a little longer.`,
+                showif: "x3-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `A very tempting offer.`,
+                showif: "x3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `But no. At least not now.`,
+                showif: "x3-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `The idiot's vlogging while drunk again and someone's got to make sure he doesn't choke on his own spit and die.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "x4-1",
+                    text: "... I have a feeling you're not being completely honest..."
+                }, {
+                    key: "x4-2",
+                    text: "Uh oh..."
+                }],
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/xiao3.png`,
+                showif: "x4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I don't know what you're talking about.`,
+                showif: "x4-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "x5-1",
+                    text: "Let me guess... Wangshu Hotel's Almond Tofu delivery just arrived?"
+                }, {
+                    key: "x5-2",
+                    text: "You're hiding something... From me??? ;(("
+                }],
+                showif: "x4-1",
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/xiao3.png`,
+                showif: "x5-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "x6-1",
+                    text: "You're an addict, hun."
+                }, {
+                    key: "x6-2",
+                    text: "If you have to choose between me and almond tofu which one would you choose???"
+                }],
+                showif: "x5-1",
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/xiao5.png`,
+                showif: "x6-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `They taste food`,
+                showif: "x6-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Good`,
+                showif: "x6-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Brb eating`,
+                showif: "x6-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "x6-1",
+                    text: "I lost to almond tofu again 🙄"
+                }],
+                showif: "x6-1",
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/xiao6.png`,
+                showif: "x6-2",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `What kind of illogical situation are you creating in your head?`,
+                showif: "x6-2",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You are not food and almond tofus are not even living beings.`,
+                showif: "x6-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `There can be no comparison.`,
+                showif: "x6-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "x7-1",
+                    text: "SO DO YOU LOVE ME MORE OR???"
+                }, {
+                    key: "x7-2",
+                    text: "Just choose!! >:("
+                }],
+                showif: "x6-2",
+                timeout: 2500
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/xiao8.png`,
+                showif: "x7-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Whatever, idiot.`,
+                showif: "x7-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'm gonna go eat. Bye`,
+                showif: "x7-1",
+                timeout: 6000
+            }, {
+                type: "ts",
+                content: "21:32",
+                showif: "x7-1",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Of course I love you more, dumbass.`,
+                showif: "x7-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `No.`,
+                showif: "x7-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'm gonna go eat. Bye`,
+                showif: "x7-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Like I said. No idea what you're on about.`,
+                showif: "x5-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `It's hard to type while eating.`,
+                showif: "x5-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll talk to yo u again latr`,
+                showif: "x5-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `He just tripped down the stairs.`,
+                showif: "x4-2"
+            }, {
+                type: "emote",
+                dir: "in",
+                content: `emote/xiao10.png`,
+                showif: "x4-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll text you again later.`,
+                showif: "x4-2"
+            }
+        ],
+        "zhongli": [
+            {
+                type: "ts",
+                content: "01:42"
             }, {
                 type: "choice",
                 content: [{
                     key: "z1-1",
-                    text: "I miss your voice already 💔"
+                    text: "i miss your voice 💔"
                 }, {
                     key: "z1-2",
-                    text: "Mhm, thank you ❤️"
+                    text: "pssst 'li.... i miss you ;("
                 }]
             }, {
                 type: "text",
                 dir: "in",
-                showif: "z1-1",
-                content: "Dearest, you will see me again tomorrow."
+                content: "Dear? You're still awake?",
+                timeout: 2000
             }, {
                 type: "text",
                 dir: "in",
-                showif: "z1-1",
-                content: "But sleep is essential for one's body to function well."
+                content: "You will see me again tomorrow morning.",
+                timeout: 2500
             }, {
                 type: "text",
                 dir: "in",
-                showif: "z1-1",
-                content: "The sooner you sleep, the sooner we will reunite."
+                content: "The sooner you sleep, the sooner we will see each other, no?"
             }, {
                 type: "choice",
+                content: [{
+                    key: "z1-1",
+                    text: "i guess..."
+                }, {
+                    key: "z1-2",
+                    text: "but what if i toss and turn on the bed again..."
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: "It has gotten quite late. I think you should put down your phone and try to rest your weary body, darling.",
+                showif: "z1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: "I do not want you to get sick, afterall.",
                 showif: "z1-1",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: "Will you try to sleep once more for me?",
+                showif: "z1-1"
+            }, {
+                type: "choice",
                 content: [{
                     key: "z2-1",
-                    text: "Okay..."
-                }]
+                    text: "okay..."
+                }, {
+                    key: "z2-2",
+                    text: "i don't think it'll work..."
+                }],
+                showif: "z1-1",
+                timeout: 2500
             }, {
                 type: "text",
                 dir: "in",
+                content: "Thank you.",
                 showif: "z2-1",
-                content: "Wonderful. Now then."
+                timeout: 2000
             }, {
                 type: "text",
                 dir: "in",
+                content: "Good night, my love. I hope rest will find you this time.",
+                showif: "z2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: "Then, may I propose a call?",
+                showif: "z2-2",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: "You've always said that my voice calms you down, so perhaps I could help?",
+                showif: "z2-2",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: "Hmmm.",
+                showif: "z1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: "Do you really not feel sleepy?",
+                showif: "z1-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "z3-1",
+                    text: "i'm tired but my brain just isn't turning off..."
+                }, {
+                    key: "z3-2",
+                    text: "yeah... can we call?"
+                }],
                 showif: "z1-2",
-                content: "You are most welcome."
+                timeout: 2500
             }, {
                 type: "text",
                 dir: "in",
-                content: "Rest well, my love."
+                content: "Would it be rude for me to ask for a call this late at night?",
+                showif: "z3-1",
+                timeout: 3000
+            }, {
+                type: "text",
+                dir: "in",
+                content: "Maybe one of the subjects I am currently studying will bore you enough to make you fall asleep?",
+                showif: "z3-1",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: "Anything for you, darling.",
+                showif: "z3-2",
+                timeout: 2000
+            }, {
+                type: "notif",
+                content: "Call started 01:47",
+                showif: ["z2-2", "z3-1", "z3-2"],
+                timeout: 5000
+            }, {
+                type: "notif",
+                content: "Call ended 2h 10m",
+                showif: ["z2-2", "z3-1", "z3-2"],
+                timeout: 3000
+            }, {
+                type: "ts",
+                content: "03:57",
+                showif: ["z2-2", "z3-1", "z3-2"],
+                timeout: 0
+            }, {
+                type: "text",
+                dir: "in",
+                content: "Dearest, you fell asleep so I took the liberty to end the call.",
+                showif: ["z2-2", "z3-1", "z3-2"],
+                timeout: 3000
+            }, {
+                type: "text",
+                dir: "in",
+                content: "I will be joining you in the lands of dreams soon. Perhaps we can continue our talk there :)",
+                showif: ["z2-2", "z3-1", "z3-2"],
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: "I hope you will see this in the morning, in which case, good morning.",
+                showif: ["z2-2", "z3-1", "z3-2"],
+                timeout: 4000
+            }, {
+                type: "text",
+                dir: "in",
+                content: "I am confident that my morning self will love you even more than my current self, but allow me to say it nonetheless - I love you. I hope you're resting peacefully now.",
+                showif: ["z2-2", "z3-1", "z3-2"],
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll see you soon, ${name}.`,
+                showif: ["z2-2", "z3-1", "z3-2"]
             }
         ],
     }
@@ -363,7 +2679,7 @@ function initChars() {
             chats: JSON.parse(JSON.stringify(chats.albedo))
         }, {
             key: "ayato",
-            name: "💙",
+            name: "my love 💙",
             pfp: "pfp/ayato.png",
             chats: JSON.parse(JSON.stringify(chats.ayato))
         }, {
@@ -373,12 +2689,12 @@ function initChars() {
             chats: JSON.parse(JSON.stringify(chats.kazuha))
         }, {
             key: "heizou",
-            name: "menace 😈",
+            name: "sherlock reincarnate",
             pfp: "pfp/heizou.png",
             chats: JSON.parse(JSON.stringify(chats.heizou))
         }, {
             key: "thoma",
-            name: "future husband",
+            name: "(future) hubby!",
             pfp: "pfp/thoma.png",
             chats: JSON.parse(JSON.stringify(chats.thoma))
         }, {
@@ -398,7 +2714,7 @@ function initChars() {
             chats: JSON.parse(JSON.stringify(chats.diluc))
         }, {
             key: "kaeya",
-            name: "kaekae",
+            name: "ice ice baby",
             pfp: "pfp/kaeya.png",
             chats: JSON.parse(JSON.stringify(chats.kaeya))
         }, {
@@ -412,13 +2728,8 @@ function initChars() {
             pfp: "pfp/itto.png",
             chats: JSON.parse(JSON.stringify(chats.itto))
         }, {
-            key: "gorou",
-            name: "puppy",
-            pfp: "pfp/gorou.png",
-            chats: JSON.parse(JSON.stringify(chats.gorou))
-        }, {
             key: "zhongli",
-            name: "Archon of my 🧡",
+            name: "My Beloved 🧡",
             pfp: "pfp/zhongli.png",
             chats: JSON.parse(JSON.stringify(chats.zhongli))
         }
@@ -528,7 +2839,7 @@ function playChatHistory(intervalMs) {
         }
     }, intervalMs);
 
-    if (i === char.chats.length) {
+    if (i >= char.chats.length) {
         appendEnding();
     }
 }
@@ -538,10 +2849,26 @@ function appendChatHistory(index) {
     let command = "next";
     let timeoutMs = 0;
 
+    if (!chat) {
+        return { command, timeoutMs };
+    }
+
     if (choiceSelected) {
         if (chat.showif) {
-            if (chat.showif !== choiceSelected) {
-                return { command, timeoutMs };
+            if (Array.isArray(chat.showif)) {
+                let stop = true;
+                chat.showif.forEach((si) => {
+                    if (si === choiceSelected) {
+                        stop = false;
+                    }
+                });
+                if (stop) {
+                    return { command, timeoutMs };
+                }
+            } else {
+                if (chat.showif !== choiceSelected) {
+                    return { command, timeoutMs };
+                }
             }
         }
     }
