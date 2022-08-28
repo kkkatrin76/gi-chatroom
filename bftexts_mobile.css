@@ -60,6 +60,12 @@
         padding: 8px 15px;
     }
 
+    .c2 .chat-list .chat-bubble .pic {
+        width: 200px;
+        border-radius: 10px;
+        margin: 5px;
+    }
+
     .c2 .choice-list .choice-btn {
         padding: 10px 20px;
     }

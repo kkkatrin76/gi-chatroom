@@ -2902,8 +2902,10 @@ function appendChatHistory(index) {
 
                 if (chat.type === "text") {
                     chatHTML += `<div class="message">${chat.content}</div>`;
-                } else {
+                } else if (chat.type === "emote") {
                     chatHTML += `<img class="emote" src="${chat.content}"></img>`;
+                } else if (chat.type === "pic") {
+                    chatHTML += `<img class="pic" src="${chat.content}"></img>`;
                 }
 
                 chatHTML += `
@@ -2919,8 +2921,10 @@ function appendChatHistory(index) {
 
                 if (chat.type === "text") {
                     chatHTML += `<div class="message">${chat.content}</div>`;
-                } else {
+                } else if (chat.type === "emote") {
                     chatHTML += `<img class="emote" src="${chat.content}"></img>`;
+                } else if (chat.type === "pic") {
+                    chatHTML += `<img class="pic" src="${chat.content}"></img>`;
                 }
 
                 chatHTML += `
@@ -2949,6 +2953,11 @@ function appendChatHistory(index) {
                 }
             });
             // console.log(choiceHTML);
+            break;
+
+        case "pause":
+            chatHTML += ``;
+            timeoutMs = chat.timeout !== undefined ? chat.timeout : defaultTimeoutMs;
             break;
     }
 

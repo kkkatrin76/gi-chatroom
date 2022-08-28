@@ -164,6 +164,11 @@ button {
     height: 100px;
     margin-top: 10px;
 }
+.c2 .chat-list .chat-bubble .pic {
+    width: 300px;
+    border-radius: 10px;
+    margin: 10px;
+}
 
 .c2 .chat-list .chat-bubble.out {
     justify-content: end;
