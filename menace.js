@@ -391,7 +391,7 @@ function initChats() {
             }, {
                 type: "text",
                 dir: "in",
-                content: `Oh, and if it's alright, I'd like us to get closer first, before getting into any sort 'stepping' on each other.`
+                content: `Oh, and if it's alright, I'd like us to get closer first, before getting into any sort of 'stepping' on each other.`
             }, {
                 type: "choice",
                 content: [{
