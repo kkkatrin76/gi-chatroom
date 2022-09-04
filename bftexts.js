@@ -348,6 +348,9 @@ function initChats() {
                 }, {
                     key: "a6-2",
                     text: "try me :p"
+                }, {
+                    key: "a6-3",
+                    text: "oh? is this a challenge :D"
                 }],
                 timeout: 2500,
                 showif: "a5-2"
@@ -420,6 +423,72 @@ function initChats() {
                 dir: "in",
                 content: `Good.`,
                 showif: "a6-2"
+            }, {
+                type: "notif",
+                content: "Call started 10:54",
+                showif: "a6-3",
+                timeout: 2000
+            }, {
+                type: "notif",
+                content: "Call ended 0m",
+                showif: "a6-3",
+                timeout: 1000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Wht`,
+                showif: "a6-3",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You`,
+                showif: "a6-3",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `That was dangerous ${name} what the hell were you thinking I am in public`,
+                showif: "a6-3",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `No`,
+                showif: "a6-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `WHat the hell are you wearing`,
+                showif: "a6-3",
+                timeout: 1500
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a6-3",
+                    text: "your coat? :)"
+                }],
+                timeout: 2500,
+                showif: "a6-3"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You`,
+                showif: "a6-3",
+                timeout: 2000
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I am not playing this game of yours.`,
+                showif: "a6-3"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a6-3",
+                    text: "awww 😈"
+                }],
+                timeout: 2500,
+                showif: "a6-3"
             }
         ],
         "ayato": [
