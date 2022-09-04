@@ -130,6 +130,298 @@ function initChats() {
                 content: `emote/albedo3.png`
             }
         ],
+        "alhaitham": [
+            {
+                type: "ts",
+                content: "10:47",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Where is my coat?`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a1-1",
+                    text: "ummmmmm"
+                }, {
+                    key: "a1-2",
+                    text: "why are you asking me?"
+                }],
+                timeout: 1500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `${name}.`,
+                showif: "a1-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Why do you keep doing this?`,
+                showif: "a1-1",
+                timeout: 2000,
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I don't believe this kleptomaniac trait of yours applies to anyone else.`,
+                showif: "a1-1",
+                timeout: 2000,
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I don't know, because you are currently wearing it?`,
+                showif: "a1-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a2-1",
+                    text: "you don't know that"
+                }, {
+                    key: "a2-2",
+                    text: "........ 😬"
+                }],
+                timeout: 2500,
+                showif: "a1-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I do, actually.`,
+                showif: "a2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Tighnari sent a photo to the group chat.`,
+                showif: "a2-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Why can't you just buy your own jacket?`,
+                timeout: 2000,
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I can accompany you shopping if you want to.`
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a3-1",
+                    text: "really?"
+                }, {
+                    key: "a3-2",
+                    text: "but your coat is nicer <3"
+                }],
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `If it means you will stop stealing my coat, then yes, really.`,
+                showif: "a3-1",
+                timeout: 2500,
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Will you be free this evening?`,
+                showif: "a3-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a4-1",
+                    text: "i can free it up!!"
+                }, {
+                    key: "a4-2",
+                    text: "mhm!"
+                }],
+                timeout: 2500,
+                showif: "a3-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Meet me at the library then.`,
+                showif: ["a4-1","a4-2"]
+            }, {
+                type: "text",
+                dir: "in",
+                content: `And bring my damn coat.`,
+                showif: ["a4-1","a4-2"]
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a4-1",
+                    text: "yes sir~"
+                }],
+                timeout: 2500,
+                showif: ["a4-1","a4-2"]
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Careful, sweetheart. You're on thin ice.`,
+                showif: "a4-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `You also steal my shirts.`,
+                showif: "a3-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a5-1",
+                    text: "cause!!! they smell like you <3"
+                }, {
+                    key: "a5-2",
+                    text: "they're comfy!!!"
+                }],
+                timeout: 2500,
+                showif: "a3-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `.....`,
+                showif: "a5-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Sometimes, you worry me, ${name}.`,
+                showif: "a5-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a5-1",
+                    text: "it's in your job description to worry and pamper me though, right :D"
+                }],
+                showif: "a5-1",
+                timeout: 2500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `A fair point.`,
+                showif: "a5-1",
+                timeout: 2000,
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I did this to myself the moment we became a couple.`,
+                showif: "a5-1",
+                timeout: 2000,
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Lucky for you, I find this as endearing as it is annoying.`,
+                showif: "a5-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `They're made of the same material as most of your shirts.`,
+                showif: "a5-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Your argument is invalid.`,
+                showif: "a5-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a5-2",
+                    text: "yOuR aRgUmEnT iS iNvAlId"
+                }],
+                timeout: 2500,
+                showif: "a5-2"
+            }, {
+                type: "pause",
+                timeout: 3000,
+                showif: "a5-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Are you testing me right now?`,
+                showif: "a5-2",
+                timeout: 3000,
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Do I need to subdue that bratty attitude of yours or are you going to behave?`,
+                showif: "a5-2"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a6-1",
+                    text: "...... sorry....."
+                }, {
+                    key: "a6-2",
+                    text: "try me :p"
+                }],
+                timeout: 2500,
+                showif: "a5-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `So, when will I get my coat back?`,
+                showif: "a6-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a6-1",
+                    text: "soon!"
+                }],
+                timeout: 2500,
+                showif: "a6-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Define 'soon'.`,
+                showif: "a6-1"
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a6-1",
+                    text: "lunch?"
+                }],
+                timeout: 2500,
+                showif: "a6-1"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'll pick you up.`,
+                showif: "a6-1",
+                timeout: 5000
+            }, {
+                type: "ts",
+                content: "12:37",
+                showif: "a6-1",
+                timeout: 500
+            }, {
+                type: "text",
+                dir: "in",
+                content: `I'm here.`,
+                showif: "a6-1"
+            }, {
+                type: "pause",
+                timeout: 3000,
+                showif: "a6-2"
+            }, {
+                type: "notif",
+                content: "Call started 10:54",
+                showif: "a6-2",
+                timeout: 5000
+            }, {
+                type: "notif",
+                content: "Call ended 14m",
+                showif: "a6-2",
+                timeout: 3000
+            }, {
+                type: "choice",
+                content: [{
+                    key: "a6-2",
+                    text: "i'll return your coat asap <3 <3 <3"
+                }],
+                timeout: 2500,
+                showif: "a6-2"
+            }, {
+                type: "text",
+                dir: "in",
+                content: `Good.`,
+                showif: "a6-2"
+            }
+        ],
         "ayato": [
             {
                 type: "ts",
@@ -2677,6 +2969,11 @@ function initChars() {
             name: "💛 Bedo 💛",
             pfp: "pfp/albedo.png",
             chats: JSON.parse(JSON.stringify(chats.albedo))
+        }, {
+            key: "alhaitham",
+            name: "plant dad(dy) 🌱",
+            pfp: "pfp/alhaitham.png",
+            chats: JSON.parse(JSON.stringify(chats.alhaitham))
         }, {
             key: "ayato",
             name: "my love 💙",
