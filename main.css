@@ -182,15 +182,13 @@ button {
     margin: 5px 0 5px auto;
 }
 
-.c2 .choice-list {
+.c2 .choice-list,
+.c2 .call-list {
     padding: 20px 30px;
     background-color: rgba(0,0,0,0.3);
     border-radius: 5px;
     overflow: auto;
     height: 95%;
-}
-.c2 .choice-list.row {
-
 }
 
 .c2 .choice-list .choice-btn {
@@ -217,6 +215,49 @@ button {
 }
 .c2 .choice-list .choice-btn.emote img {
     height: 100px;
+}
+
+.c2 .call-list {
+    height: 90%;
+    text-align: center;
+}
+
+.c2 .call-timer {
+    font-size: 1.1em;
+    color: rgb(112 112 129);
+    padding-top: 20px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.c2 .call-list .tray {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+
+.c2 .call-list .tray .icon img {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    margin: 0;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.c2 .call-list .tray .icon.off img {
+    background-color: rgb(76,82,92);
+}
+
+.c2 .call-list .message {
+    margin-bottom: 10px;
+}
+
+.c2 .call-list .message.out {
+    font-style: italic;
+    color: rgb(112 112 129);
+    margin: 20px 0;
 }
 
 .credits {

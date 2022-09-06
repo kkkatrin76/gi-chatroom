@@ -69,4 +69,17 @@
     .c2 .choice-list .choice-btn {
         padding: 10px 20px;
     }
+
+    .c2 .call-list {
+        padding: 15px 30px;
+    }
+
+    .c2 .call-list .tray .icon img {
+        height: 20px;
+        width: 20px;
+    }
+
+    .c2 .call-list .message.out {
+        margin: 15px 0;
+    }
 }
