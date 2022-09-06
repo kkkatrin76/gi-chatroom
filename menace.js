@@ -712,7 +712,7 @@ function initChats() {
             }, {
                 type: "text",
                 dir: "in",
-                content: `[name]?`
+                content: `${name}?`
             }, {
                 type: "choice",
                 content: [{
