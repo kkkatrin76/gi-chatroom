@@ -1265,7 +1265,7 @@ function initChats() {
             }, {
                 type: "text",
                 dir: "in",
-                content: `--. --- --- -.. / -- --- .-. -. .. -. --. / # ...--`
+                content: `--. --- --- -.. / -- --- .-. -. .. -. --. / -- .-- .- ....`
             }, {
                 type: "choice",
                 content: [{
