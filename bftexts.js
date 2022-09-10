@@ -2133,13 +2133,13 @@ function initChats() {
             }, {
                 type: "choice",
                 content: [{
-                    key: "t1-2",
+                    key: "t5-1",
                     text: "ice cream..."
                 }, {
-                    key: "t1-2",
+                    key: "t5-2",
                     text: "chips..."
                 }, {
-                    key: "t1-2",
+                    key: "t5-3",
                     text: "chocolates..."
                 }],
                 showif: "t1-2",
@@ -2148,12 +2148,12 @@ function initChats() {
                 type: "text",
                 dir: "in",
                 content: `I gotchu baby <3`,
-                showif: "t1-2"
+                showif: ["t5-1", "t5-2", "t5-3"]
             }, {
                 type: "emote",
                 dir: "in",
                 content: `emote/thoma2.png`,
-                showif: "t1-2",
+                showif: ["t5-1", "t5-2", "t5-3"],
                 timeout: 2000
             }, {
                 type: "text",
