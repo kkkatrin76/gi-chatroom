@@ -1,1 +1,47 @@
 <!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Room: Missing You</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="main_mobile.css">
+
+<script src="missingyou.js"></script>
+
+<body onLoad="getBg(); getName(); appendVersion()">
+
+    <div id="main" class="main">
+
+        <div id="content" class="content">
+            <div class="c1">
+                <div id="char-list"></div>
+            </div>
+
+            <div class="c2">
+                <div id="chat-name" class="chat-name"></div>
+
+                <div class="chat-list-wrapper">
+                    <div id="chat-list" class="chat-list"></div>
+
+                    <div id="call-timer" class="call-timer hidden">
+                        <span id="timer-min">00</span>:<span id="timer-sec">00</span>
+                    </div>
+                    <div id="call-list" class="call-list hidden"></div>
+
+                    <div id="choice-list" class="choice-list hidden"></div>
+                </div>
+
+                <div class="credits">
+                    <div><a target=_blank href="https://genshin.hoyoverse.com/en/">Genshin Impact</a> (c) <a target=_blank href="https://www.hoyoverse.com/en-us/">Hoyoverse</a></div>
+                    <div>Wallpapers: <a target=_blank href="https://rare-gallery.com/341467-genshin-impact-video-game-anime-girls-scenery.html">Day</a> / <a target=_blank href="https://www.wallpaperflare.com/genshin-impact-landscape-wallpaper-ymqho">Evening</a> / <a target=_blank href="https://www.pockettactics.com/wp-content/uploads/2021/02/genshin-impact-wallpaper-4.jpg">Night</a> | <a target=_blank href="https://genshinresource.tumblr.com/emotelist">Emotes</a></div>
+                </div>
+
+            </div>
+
+            <div id="version"></div>
+        </div>
+
+    </div>
+</body>
+</html>
