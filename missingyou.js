@@ -1077,7 +1077,7 @@ function initChats() {
             }, {
                 type: "call",
                 dir: "in",
-                content: `"<i><span style="font-size:0.7em">Fuck-</span></i>""`,
+                content: `"<i><span style="font-size:0.7em">Fuck-</span></i>"`,
                 showif: "z15-2",
                 timeout: 4000
             }, {
@@ -1179,15 +1179,15 @@ function initChats() {
             }, {
                 type: "call",
                 dir: "in",
-                content: `"The night is far from over, and besides..."`,
-                showif: "z15-2",
-                timeout: 5000
-            }, {
-                type: "call",
-                dir: "in",
                 content: `"We don't want to further spoil the mattress now, do we?"`,
                 showif: "z15-2",
                 timeout: 4000
+            }, {
+                type: "call",
+                dir: "in",
+                content: `"<i>*chuckle*</i> Do prepare yourself. The night is far from over..."`,
+                showif: "z15-2",
+                timeout: 5000
             }, {
                 type: "call-end"
             }, {
@@ -2428,7 +2428,7 @@ function initChats() {
             }, {
                 type: "call",
                 dir: "in",
-                content: `"You're such a pervert. If I force your mouth open right now you would be drooling, wouldn't you?"`,
+                content: `"Naughty, naughty. If I force your mouth open right now you would be drooling, wouldn't you?"`,
                 timeout: 4000
             }, {
                 type: "call",
@@ -2443,7 +2443,7 @@ function initChats() {
             }, {
                 type: "call",
                 dir: "in",
-                content: `"There. Pants are off."`,
+                content: `"There. My pants are off."`,
                 timeout: 2000
             }, {
                 type: "call",
@@ -2866,7 +2866,7 @@ function initChats() {
             }, {
                 type: "call",
                 dir: "in",
-                content: `"You're so wet... A-Ah, fuck, are you crying from how good it feels? You're so pent up, aren't you?"`,
+                content: `"You're so wet... A-Ah, fuck, are you crying from how good it feels? You're so sensitive, aren't you?"`,
                 timeout: 4500
             }, {
                 type: "call",
@@ -2895,7 +2895,7 @@ function initChats() {
             }, {
                 type: "call",
                 dir: "in",
-                content: `".... Archons........"`,
+                content: `".... Gods........"`,
                 timeout: 8000
             }, {
                 type: "call",
@@ -3015,7 +3015,7 @@ function initChats() {
             }, {
                 type: "call",
                 dir: "in",
-                content: `"- so don't even- <i>archons!</i>"`,
+                content: `"- so don't even- <i>fuck!</i>"`,
                 showif: "a33-1"
             }, {
                 type: "call",
