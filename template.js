@@ -8,9 +8,12 @@ var char = null;
 var name = "[name]";
 var chatHTML = "";
 var choiceHTML = "";
+var callHTML = "";
 var lastChatIndex = -1;
 var choicesSelection = [];
 var choiceSelected = "";
+var callCamStatus = "off";
+var callMicStatus = "on";
 
 var playChat = null;
 var playTimeout = null;
@@ -115,11 +118,12 @@ function initChars() {
     // deep clone here so original chats stays intact
     chars = [
         {
-            key: "charkey",
-            name: "chardisplayname",
-            pfp: "pfp/charkey.png",
-            chats: JSON.parse(JSON.stringify(chats.charkey))
-        }
+            key: "zhongli",
+            name: "My Beloved 🧡",
+            pfp: "pfp/zhongli3.gif",
+            chatpfp: "pfp/zhongli3.jpg",
+            chats: JSON.parse(JSON.stringify(chats.zhongli))
+        },
     ];
 
     chars.sort((a, b) => {
@@ -164,19 +168,24 @@ function onSelectCharacter() {
 
     clearInterval(playChat);
     clearTimeout(playTimeout);
+
+    resetTimer();
     // console.log({char})
 
     document.getElementById('chat-name').innerHTML = char.name;
 
     chatHTML = "";
+    callHTML = "";
     choiceHTML = "";
     lastChatIndex = -1;
     choiceSelected = "";
     choicesSelection = [];
 
     let chatListDiv = document.getElementById('chat-list');
+    let callListDiv = document.getElementById('call-list');
     let choiceListDiv = document.getElementById('choice-list');
     chatListDiv.innerHTML = chatHTML;
+    callListDiv.innerHTML = callHTML;
     choiceListDiv.innerHTML = choiceHTML;
 
     playChatHistory();
@@ -235,6 +244,7 @@ function appendChatHistory(index) {
     let chat = char.chats[index];
     let command = "next";
     let timeoutMs = 0;
+    let startCallTimerInterval = false;
 
     if (!chat) {
         return { command, timeoutMs };
@@ -282,7 +292,7 @@ function appendChatHistory(index) {
                 chatHTML += `
                     <div class="chat-bubble in">
                         <div class="left">
-                            <img class="char-pic" src="${char.pfp}"></img>
+                            <img class="char-pic" src="${char.chatpfp}"></img>
                         </div>
                         <div class="right">
                             <div class="char-name">${char.name}</div>
@@ -326,6 +336,30 @@ function appendChatHistory(index) {
             timeoutMs = chat.timeout !== undefined ? chat.timeout : defaultTimeoutMs;
             break;
 
+        case "call":
+            if (!callStarted) {
+                callStarted = true;
+                startCallTimerInterval = true;
+
+                callHTML += `
+                    <div class="tray">
+                        <div class="icon ${callMicStatus}"><img src="icons/mic_${callMicStatus}.svg" /></div>
+                        <div class="icon ${callCamStatus}"><img src="icons/cam_${callCamStatus}.svg" /></div>
+                        <div class="icon"><img src="icons/hangup.svg" /></div>
+                    </div>
+                `
+            }
+
+            callHTML += `<div class="message ${chat.dir}">${chat.content}</div>`;
+
+            timeoutMs = chat.timeout !== undefined ? chat.timeout : defaultTimeoutMs;
+            break;
+
+        case "call-end":
+            callHTML = "";
+            resetTimer();
+            break
+
         case "choice":
             command = "stop";
             timeoutMs = chat.timeout !== undefined ? chat.timeout : defaultChoiceTimeoutMs;
@@ -338,6 +372,10 @@ function appendChatHistory(index) {
                     choiceHTML += `<button class="choice-btn" onclick="selectChoice('${c.key}')">${c.text}</button>`;
                 } else if (c.emote) {
                     choiceHTML += `<button class="choice-btn emote" onclick="selectChoice('${c.key}')"><img src="${c.emote}"></img></button>`;
+                } else if (c.pic) {
+                    choiceHTML += `<button class="choice-btn emote" onclick="selectChoice('${c.key}')"><img src="${c.pic}"></img></button>`;
+                } else if (c.call) {
+                    choiceHTML += `<button class="choice-btn" onclick="selectChoice('${c.key}')">${c.call}</button>`;
                 }
             });
             // console.log(choiceHTML);
@@ -347,30 +385,57 @@ function appendChatHistory(index) {
             chatHTML += ``;
             timeoutMs = chat.timeout !== undefined ? chat.timeout : defaultTimeoutMs;
             break;
+
+        case "callfunc":
+            if (chat.funcname === "changeCallIconStatus") {
+                if (chat.timeout) {
+                    let funcTimeout = setTimeout(() => {
+                        changeCallIconStatus(chat.funcparams);
+                        clearTimeout(funcTimeout);
+                    }, chat.timeout);
+                } else {
+                    changeCallIconStatus(chat.funcparams);
+                }
+            }
+            break
     }
 
     let chatListDiv = document.getElementById('chat-list');
+    let callListDiv = document.getElementById('call-list');
     let choiceListDiv = document.getElementById('choice-list');
 
     // append html elements
     chatListDiv.innerHTML = chatHTML;
     choiceListDiv.innerHTML = choiceHTML;
+    callListDiv.innerHTML = callHTML;
 
     // hide or show chat list or choice list accordingly
     if (choiceHTML) {
         playTimeout = setTimeout(() => {
             chatListDiv.classList.add("hidden");
+            callListDiv.classList.add("hidden");
             choiceListDiv.classList.remove("hidden");
             clearTimeout(playTimeout);
         }, timeoutMs);
-    } else {
+    } else if (callHTML) {
+        chatListDiv.classList.add("hidden");
+        callListDiv.classList.remove("hidden");
+        choiceListDiv.classList.add("hidden");
+    } else if (chatHTML) {
         chatListDiv.classList.remove("hidden");
+        callListDiv.classList.add("hidden");
         choiceListDiv.classList.add("hidden");
     }
 
     // scroll chat list to the bottom and choice list to the top
     chatListDiv.scrollTop = chatListDiv.scrollHeight;
+    callListDiv.scrollTop = callListDiv.scrollHeight;
     choiceListDiv.scrollTop = 0;
+
+    if (startCallTimerInterval) {
+        document.getElementById('call-timer').classList.remove("hidden");
+        callTimerInterval = setInterval(setTime, 1000);
+    }
 
     return { command, timeoutMs };
 }
@@ -391,9 +456,9 @@ function selectChoice(key) {
     choicesSelection.forEach((item, i) => {
         if (item.key === key) {
             newItem = {
-                type: item.text ? "text" : "emote",
+                type: item.call ? "call" : (item.pic ? "pic" : (item.text ? "text" : "emote")),
                 dir: "out",
-                content: item.text ? item.text : item.emote,
+                content: item.call ? item.call : (item.pic ? item.pic : (item.text ? item.text : item.emote)),
                 showif: key,
                 timeout: item.timeout === undefined ? defaultTimeoutMs : item.timeout
             };
@@ -405,13 +470,69 @@ function selectChoice(key) {
     choiceSelected = key;
     choiceHTML = "";
 
-    document.getElementById('chat-list').classList.remove("hidden");
+    if (callHTML) {
+        document.getElementById('call-list').classList.remove("hidden");
+        document.getElementById('call-list').scrollTop = document.getElementById('call-list').scrollHeight;
+    } else {
+        document.getElementById('chat-list').classList.remove("hidden");
+        document.getElementById('chat-list').scrollTop = document.getElementById('chat-list').scrollHeight;
+    }
     document.getElementById('choice-list').classList.add("hidden");
     document.getElementById('choice-list').innerHTML = choiceHTML;
 
     char.chats.splice(lastChatIndex, 0, newItem);
 
     playChatHistory();
+}
+
+function changeCallIconStatus({ icon }) {
+    if (icon === "mic") {
+        let prevCallMicStatus = callMicStatus;
+        callMicStatus = callMicStatus === "on" ? "off" : "on";
+        callHTML = callHTML.replace(
+            `class="icon ${prevCallMicStatus}"><img src="icons/mic_${prevCallMicStatus}.svg`,
+            `class="icon ${callMicStatus}"><img src="icons/mic_${callMicStatus}.svg`
+        );
+    } else if (icon === "cam") {
+        let prevCallCamStatus = callCamStatus;
+        callCamStatus = callCamStatus === "on" ? "off" : "on";
+        callHTML = callHTML.replace(
+            `icon ${prevCallCamStatus}"><img src="icons/cam_${prevCallCamStatus}.svg`,
+            `icon ${callCamStatus}"><img src="icons/cam_${callCamStatus}.svg`
+        );
+    }
+    let callListDiv = document.getElementById('call-list');
+    callListDiv.innerHTML = callHTML;
+}
+
+// Countup timer for call
+var totalSeconds = 0;
+var callStarted = false;
+var callTimerInterval;
+
+function setTime() {
+    var minutesLabel = document.getElementById("timer-min");
+    var secondsLabel = document.getElementById("timer-sec");
+    ++totalSeconds;
+    secondsLabel.innerHTML = pad(totalSeconds % 60);
+    minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+    var valString = val + "";
+    if (valString.length < 2) {
+        return "0" + valString;
+    } else {
+        return valString;
+    }
+}
+
+function resetTimer() {
+    totalSeconds = 0;
+    callStarted = false;
+    clearInterval(callTimerInterval);
+
+    document.getElementById('call-timer').classList.add("hidden");
 }
 
 // Mobile device alert
