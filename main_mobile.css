@@ -70,12 +70,12 @@
         padding: 10px 20px;
     }
 
-    .c2 .choice-list {
-        height: 75%;
-    }
+    /* .c2 .choice-list {
+        height: 77%;
+    } */
 
     .c2 .call-list {
-        height: 80%;
+        height: 82%;
     }
 
     .c2 .call-list {
@@ -93,7 +93,7 @@
     }
 
     .c2 .call-timer {
-        font-size: 0.8em;
+        font-size: 0.65em;
         padding-top: 10px;
     }
 }
