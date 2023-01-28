@@ -1,4 +1,4 @@
-const version = "1.4";
+const version = "1.0";
 const defaultTimeoutMs = 1500;
 const defaultChoiceTimeoutMs = 2000;
 
@@ -3427,8 +3427,10 @@ function selectChoice(key) {
 
     if (callHTML) {
         document.getElementById('call-list').classList.remove("hidden");
+        document.getElementById('call-list').scrollTop = document.getElementById('call-list').scrollHeight;
     } else {
         document.getElementById('chat-list').classList.remove("hidden");
+        document.getElementById('chat-list').scrollTop = document.getElementById('chat-list').scrollHeight;
     }
     document.getElementById('choice-list').classList.add("hidden");
     document.getElementById('choice-list').innerHTML = choiceHTML;
