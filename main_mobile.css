@@ -70,10 +70,12 @@
         padding: 10px 20px;
     }
 
-    /* .c2 .chat-list, */
-    .c2 .choice-list,
+    .c2 .choice-list {
+        height: 75%;
+    }
+
     .c2 .call-list {
-        height: 72%;
+        height: 80%;
     }
 
     .c2 .call-list {
