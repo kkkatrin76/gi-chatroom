@@ -72,7 +72,7 @@
 
     .c2 .chat-list,
     .c2 .choice-list {
-
+        height: 85%;
     }
 
     .c2 .call-list {
@@ -89,7 +89,7 @@
     }
 
     .c2 .call-timer {
-        font-size: 1.0em;
+        /* font-size: 0.8em; */
         padding-top: 10px;
     }
 }
